@@ -1,0 +1,277 @@
+@use './variables' as *;
+
+.banner {
+  width: 100%;
+  max-width: $bp-desktop;
+  height: 731px;
+  margin: 0 auto;
+  position: relative;
+
+  &__slider {
+    width: 1120px;
+    height: 702px;
+    position: absolute;
+    top: 0; 
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+    transition: opacity 0.5s ease;
+
+    &.fade {
+      opacity: 0;
+    }
+  }
+
+  &__dots {
+    position: absolute;
+    bottom: 0; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 56px; 
+    height: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__dot {
+    width: 12px;
+    height: 12px;
+    background-color: #EFEEF6;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &.active {
+      background-color: $color-dots;
+    }
+  }
+
+  &__card {
+    position: absolute;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    text-decoration: none; 
+    color: inherit;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    &-text {
+      font-family: $font-main;
+      font-weight: 700;
+      font-size: 18px;
+      color: $color-primary;
+      text-align: left;
+      line-height: 1.2;
+      margin: 102px 20px 4px;
+
+      .banner__line--top,
+      .banner__line--number,
+      .banner__line--books,
+      .banner__line--year {
+        display: block;
+      }
+    }
+
+    &-arrow {
+      margin: 0 0 20px 20px;
+    }
+
+    &--purple {
+      width: 149px;
+      height: 204px;
+      background-color: #9E98DC;
+      top: 79px;
+      right: 74px;
+    }
+
+    &--pink {
+      width: 137px;
+      height: 273px;
+      background-color: #FF8FE6;
+      top: 359px;
+      right: 0;
+
+      .banner__card-text {
+        margin: 149px 47px 4px 21px;
+      }
+
+      .banner__card-arrow {
+        margin: 0 0 20px 21px;
+      }
+    }
+  }
+
+  // ---- Tablet-lg (max-width: 1024px)
+  @media (max-width: $bp-tablet-lg) {
+    height: 557px;
+    max-width: $bp-tablet-lg;
+
+    &__slider {
+      width: 864px;
+      height: 530px;
+    }
+
+    &__card {
+      &-text {
+        font-size: 14px;
+        margin: 75px 16px 4px;
+      }
+
+      &-arrow {
+        margin: 0 0 16px 16px;
+      }
+
+      &--purple {
+        width: 120px;
+        height: 165px;
+        top: 50px;
+        right: 35px;
+      }
+
+      &--pink {
+        width: 100px;
+        height: 200px;
+        top: 300px;
+        right: 0;
+
+        .banner__card-text {
+          margin: 100px 40px 4px 16px;
+        }
+
+        .banner__card-arrow {
+          margin: 0 0 15px 15px;
+        }
+      }
+    }
+  }
+
+  // ---- Tablet-md (max-width: 768px)
+  @media (max-width: $bp-tablet-md) {
+    height: 480px;
+    max-width: $bp-tablet-md;
+
+    &__slider {
+      width: 700px;
+      height: 445px;
+    }
+
+    &__dots {
+      gap: 6px;
+    }
+
+    &__card {
+      &-text {
+        font-size: 12px;
+        margin: 60px 13px 4px;
+      }
+
+      &-arrow {
+        margin: 0 0 10px 13px;
+      }
+
+      &--purple {
+        width: 100px;
+        height: 135px;
+        top: 30px;
+        right: 15px;
+      }
+
+      &--pink {
+        width: 90px;
+        height: 170px;
+        top: 240px;
+        right: 0;
+
+        .banner__card-text {
+          margin: 85px 40px 4px 13px;
+        }
+
+        .banner__card-arrow {
+          margin: 0 0 10px 13px;
+        }
+      }
+    }
+  }
+
+  // ---- Mobile (max-width: 480px)
+  @media (max-width: $bp-mobile) {
+    & {
+      width: 100%;
+      height: 380px;
+      padding: 0 12px;
+      box-sizing: border-box;
+    }
+  
+    &__slider {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      position: relative;
+    }
+  
+    &__dots {
+      margin-bottom: 98px;
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+    }
+  
+    &__card {
+      position: static;
+      float: left;
+      width: 180px;
+      height: 55px;
+      margin: 55px 3px 0;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      text-decoration: none;
+      color: inherit;
+
+      &-text {
+        margin: 0 !important;
+        padding: 0;
+        font-size: 9px;
+        line-height: 1.2;
+        text-align: left;
+  
+        .banner__line--top,
+        .banner__line--number {
+          display: inline;
+          white-space: nowrap;
+        }
+
+        .banner__line--books,
+        .banner__line--year {
+          display: block;
+        }
+      }
+  
+      &-arrow {
+        margin: 0 !important;
+        width: 57px;
+        height: 14px;
+      }
+    }
+  }
+}

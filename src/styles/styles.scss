@@ -1,0 +1,19 @@
+@use './variables' as *;
+@use './header';
+@use './banner';
+@use './books';
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+    margin: 0;
+    font-family: $font-secondary;
+    background: #ffffff;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $font-main;
+  }
+
