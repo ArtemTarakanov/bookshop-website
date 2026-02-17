@@ -1,18 +1,32 @@
-📚 Bookshop
+# Bookshop React
 
-Frontend project for an online bookstore. Built with HTML, SCSS, TypeScript, and Webpack.
+Интернет-магазин книг на React с TypeScript и Webpack.
 
-✨ Features
+## Установка
 
-Responsive header with navigation and burger menu.
-Slider with banners and navigation dots.
-Book list with lazy loading (Load More button).
-Shopping cart with dynamic badge.
-Fully responsive design for desktop, tablet, and mobile.
+```bash
+npm install
+```
 
-🛠️ Stack
+## Запуск
 
-HTML5, SCSS (Sass)
-TypeScript
-Webpack
+```bash
+npm start
+```
 
+Приложение откроется на http://localhost:8080
+
+## Сборка
+
+```bash
+npm run build
+```
+
+## Функционал
+
+- Слайдер баннеров с автоматической сменой
+- Каталог книг с загрузкой через Google Books API
+- Фильтрация по категориям
+- Корзина с сохранением в localStorage
+- Адаптивный дизайн (desktop, tablet, mobile)
+- Бургер-меню для мобильных устройств
